@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: classWork2july.features.TodoMVCtestSuitMaven
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.426 sec - in classWork2july.features.TodoMVCtestSuitMaven
