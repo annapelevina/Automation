@@ -1,6 +1,7 @@
 package gmailAutomation;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.ElementsCollection;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -17,6 +18,7 @@ public class GmailSelenideTest {
 
     @Test
     public void testGmailLoginSendSearch(){
+        ElementsCollection listOfUnreadEmails =$$(".y6 :nth-child(1) b");
 
         Configuration.timeout=10000;
 //login
@@ -36,10 +38,10 @@ public class GmailSelenideTest {
         $("[title='Gmail']").click();
 
 //verify delivered email in the top
-         $$(".y6 :nth-child(1) b").get(0).shouldHave(text("Test Gmail Subject"));
+         listOfUnreadEmails.get(0).shouldHave(text("Test Gmail Subject"));
 
 //verify delivered email is only one unread
-        $$(".y6 :nth-child(1) b").filter(text("Test Gmail Subject")).shouldHaveSize(1);
+         listOfUnreadEmails.filter(text("Test Gmail Subject")).shouldHaveSize(1);
 
     }
   }
