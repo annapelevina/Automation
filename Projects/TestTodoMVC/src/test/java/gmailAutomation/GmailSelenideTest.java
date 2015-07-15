@@ -1,13 +1,14 @@
 package gmailAutomation;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static gmailAutomation.Credentials.*;
+import static gmailAutomation.Credentials.login;
+import static gmailAutomation.Credentials.password;
 
 /**
  * Created by anna.pelevina on 7/15/2015.
@@ -35,13 +36,10 @@ public class GmailSelenideTest {
         $("[title='Gmail']").click();
 
 //verify delivered email in the top
-        $(By.xpath("//table[@class='F cf zt']/tbody/tr[1]/td[6]/div/div/div/span[1]")).shouldHave(Condition.text("Test Gmail Subject"));
+         $$(".y6 :nth-child(1) b").get(0).shouldHave(text("Test Gmail Subject"));
 
 //verify delivered email is only one unread
-        $$(By.xpath("//div[@class='y6']/span/b[contains(text(),'Test Gmail Subject')]")).shouldHaveSize(1);
-
-//verify no read emails with "Test Gmail Subject" subject
-        $$(By.xpath("//div[@class='y6']/span[contains(text(),'Test Gmail Subject')]")).shouldHaveSize(0);
+        $$(".y6 :nth-child(1) b").filter(text("Test Gmail Subject")).shouldHaveSize(1);
 
     }
   }
