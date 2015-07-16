@@ -4,12 +4,11 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.junit.Test;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static gmailAutomation.Credentials.login;
-import static gmailAutomation.Credentials.password;
+import static gmailAutomation.credentials.Credentials.login;
+import static gmailAutomation.credentials.Credentials.password;
 
 /**
  * Created by anna.pelevina on 7/15/2015.

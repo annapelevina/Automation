@@ -1,4 +1,4 @@
-package gmailAutomation;
+package gmailAutomation.credentials;
 
 /**
  * Created by anna.pelevina on 7/15/2015.
