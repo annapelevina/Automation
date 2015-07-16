@@ -1,6 +1,5 @@
 package googleSearch;
 
-import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -33,10 +32,11 @@ public class GoogleSearchSeleniumTest {
 
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".st")));
         //assertTrue(driver.findElements(By.cssSelector(".st")).get(9).getText().contains("Python bindings for Selenium"));
-    }
-
-    @After
-    public void quitBrowser(){
         driver.quit();
     }
+
+    //@After
+    //public void quitBrowser(){
+        //driver.quit();
+    //}
 }
