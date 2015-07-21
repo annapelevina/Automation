@@ -45,6 +45,7 @@ public class GmailSeleniumTest {
         driver.findElement((By.partialLinkText("Inbox"))).click();
 
 //verify delivered email in the top
+        wait.until(visibilityOfElementLocated(By.cssSelector("[role=\"main\"] .xT span")));
         List<WebElement> elements = driver.findElements(By.cssSelector("[role=\"main\"] .xT span"));
         //or driver.findElements(By.xpath("//span//.[contains(text(), 'Test Gmail Subject')]")
         assertEquals(elements.get(0).getText(), "Test Gmail Subject");
