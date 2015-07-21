@@ -42,7 +42,7 @@ public class GmailSeleniumTest {
         driver.findElement(By.xpath("//div[contains(text(), 'Send')]")).click();
 
 //refresh mailbox
-        driver.findElement((By.partialLinkText("Inbox"))).click();
+        wait.until(visibilityOfElementLocated(By.partialLinkText("Inbox"))).click();
 
 //verify delivered email in the top
         wait.until(visibilityOfElementLocated(By.cssSelector("[role=\"main\"] .xT span")));
